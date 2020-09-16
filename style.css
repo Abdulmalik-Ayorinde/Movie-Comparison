@@ -6,7 +6,12 @@
 }
 
 body {
-    background: url();
+    color: #eee;
+    background: url('https://images.unsplash.com/photo-1573339886518-264aa6f194b2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 input {
@@ -19,6 +24,7 @@ input {
 }
 
 button {
+    background-color: #14568f;
     border: 0;
     border-radius: 5px;
     box-shadow: 2px 2px 5px #292c2c;
@@ -38,9 +44,9 @@ button {
  display: flex; 
 flex-direction: row;
 flex-wrap: wrap;
-border: 10px solid #d7dddd;
-box-shadow:  5px 5px 5px #869795, 
-         -2px -2px 10px #727979;
+border: 10px solid #004682;
+box-shadow:  5px 5px 5px #004682, 
+         -2px -2px 10px #004682;
          justify-content: space-evenly;
 }
 
@@ -48,9 +54,9 @@ img {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     margin: 10px;
-    border: 10px solid #d7dddd;
+    border: 10px solid #004682;
     border-bottom: 0;
-    box-shadow:  5px 5px 5px #eff7f6, 
+    box-shadow:  5px 5px 5px #004682, 
              -2px -2px 10px #292c2c;
     align-items: center;
     /* text-align: center; */
@@ -58,4 +64,9 @@ img {
 
 li {
     list-style: none;
+}
+
+.plot {
+    width: 300px;
+    text-align: center;
 }
