@@ -22,16 +22,29 @@ await fetch(`http://www.omdbapi.com/?apikey=c3e4e145&s=${searchBox.value}`)
 })
 }
 
+function trimString(string, length) {
+
+    if (string.length > length) {
+        return string.substring(0, length) + `<button>...</button>`
+       } else {
+          return  string
+       }
+    // return string.length > length ? 
+    //        string.substring(0, length) + `<button>...</button>` :
+    //        string;
+  };
+
+
 function putInDOm(result, secondCallData) {
         // functionality for the first API call
         var details = document.createElement('div')
-        var img = document.createElement('img')
-        img.setAttribute('src', `${result.Poster}`)
-        details.appendChild(img)
-        details.innerHTML = `<li class="">${result.Title}</li>
+        var plot = secondCallData.Plot
+        details.innerHTML = `
+        <img src="${result.Poster}" alt="Broken Image">
+        <li class="">${result.Title}</li>
         <li class="year">${result.Year}</li>
         <li class="type">${result.Type}</li>
-        <li class="id">${secondCallData.Plot}</li>`
+        <li class="plot">${trimString(plot, 200)}</li>`
         details.classList.add('details')
         container.appendChild(details)
 }
