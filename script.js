@@ -27,8 +27,12 @@ function trimString(string, length) {
     if (string.length > length) {
         return string.substring(0, length) + `<button>...</button>`
        } else {
-          return  string
+           return string
        }
+ 
+       // else if (string.length = undefined) {
+      //  return  "N/a"
+    //} 
     // return string.length > length ? 
     //        string.substring(0, length) + `<button>...</button>` :
     //        string;
@@ -41,10 +45,10 @@ function putInDOm(result, secondCallData) {
         var plot = secondCallData.Plot
         details.innerHTML = `
         <img src="${result.Poster}" alt="Broken Image">
-        <li class="">${result.Title}</li>
-        <li class="year">${result.Year}</li>
-        <li class="type">${result.Type}</li>
-        <li class="plot">${trimString(plot, 200)}</li>`
+        <li class="title"><b>Title: </b>${result.Title}</li>
+        <li class="year"><b>Year: </b>${result.Year}</li>
+        <li class="type"><b>${result.Type}</b></li>
+        <li class="plot"><b>Plot: </b>${trimString(plot, 200)}</li>`
         details.classList.add('details')
         container.appendChild(details)
 }
