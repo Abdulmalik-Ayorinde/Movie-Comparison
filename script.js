@@ -9,7 +9,8 @@ async function fetchData() {
   var el = document.createElement('meta')
   el.setAttribute('http-equiv', 'Content-Security-Policy')
   el.setAttribute('content', 'upgrade-insecure-requests')
-  docum
+  document.head.append(el)
+}
 await fetch(`http://www.omdbapi.com/?apikey=c3e4e145&s=${searchBox.value}`)
 .then(resp => resp.json())
 .then(data => {
